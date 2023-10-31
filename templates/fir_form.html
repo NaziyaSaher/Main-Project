@@ -1,0 +1,205 @@
+{% load static %}
+{% block body %}
+<html class="fixed">
+	<head>
+		<title>An Implementation of blockchain technology on forensic evidence Management System | FIR Form</title>
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/magnific-popup/magnific-popup.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap-datepicker/css/datepicker3.css' %}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme.css' %}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/skins/default.css' %}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme-custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'user/assets/vendor/modernizr/modernizr.js' %}"></script>
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+		 {% include 'headeruser.html' %}
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				 {% include 'sidebaruser.html' %}
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>FIR Form</h2>
+
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="{% url 'user_home' %}">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span>Add</span></li>
+								<li><span>Forensic Evidence Form</span></li>
+							</ol>
+
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+
+					<!-- start: page -->
+
+					<div class="row">
+						<div class="col-md-12">
+							<form class="form-horizontal" method="post">
+                            {% csrf_token %}
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
+
+										<h2 class="panel-title">FIR Form</h2>
+
+									</header>
+									<div class="panel-body">
+										<div class="validation-message">
+											<ul></ul>
+										</div>
+
+<div class="form-group">
+											<label class="col-sm-3 control-label">Police Station <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<select type="text" class="form-control" name="policestation" value="" required="true">
+													<option value="">Select Police Station</option>
+							 	{% for i in station %}
+            <option value="{{i.id}}">{{i.policestationname}}-({{i.policestationcode}})</option>
+                {% endfor %}
+ 												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Crime Type <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<select type="text" class="form-control" name="crimetype" value="" required='true'>
+													<option value="">Choose Crime Type</option>
+							 	{% for i in category %}
+<option value="{{i.id}}">{{i.catname}}</option>
+                                 {% endfor %}
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Name of Accused <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="nofaccused" value="" required='true'>
+											</div>
+										</div>
+
+										<p style="font-size: 18px;color: red;padding-left: 10px"> Evidence (Victim)</p>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Name <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="name" value="" required='true'>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Age <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="parentage" value="" required='true'>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Contact Number <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="connum" value="" required='true' maxlength="10" pattern="[0-9]+">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Location<span class="required">*</span></label>
+											<div class="col-sm-9">
+												<textarea type="text" class="form-control"  name="address" value="" required='true'></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Eye witness<span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="relaccused" value="" required='true'>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Other Details<span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="purpose" value="" required='true'>
+											</div>
+										</div>
+									</div>
+									<footer class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<button class="btn btn-sm btn-primary login-submit-cs" type="submit"name="submit">Submit</button>
+
+											</div>
+										</div>
+									</footer>
+								</section>
+							</form>
+						</div>
+
+					</div>
+					<!-- end: page -->
+				</section>
+			</div>
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="{% static 'user/assets/vendor/jquery/jquery.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/nanoscroller/nanoscroller.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/magnific-popup/magnific-popup.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-placeholder/jquery.placeholder.js' %}"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="{% static 'user/assets/vendor/jquery-validation/jquery.validate.js' %}"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'user/assets/javascripts/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'user/assets/javascripts/theme.custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'user/assets/javascripts/theme.init.js' %}"></script>
+
+
+		<!-- Examples -->
+		<script src="{% static 'user/assets/javascripts/forms/examples.validation.js' %}"></script>
+	</body>
+</html>
+{% ifequal error "no" %}
+<script>
+    alert('Your FIR Request Has Been Send to us. We Will Contact You Soon.');
+    window.location=('{% url 'fir_form' %}');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endifequal %}
+{% endblock %}

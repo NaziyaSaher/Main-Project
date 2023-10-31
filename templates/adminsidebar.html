@@ -1,0 +1,99 @@
+  <aside id="sidebar-left" class="sidebar-left">
+
+          <div class="sidebar-header">
+            <div class="sidebar-title">
+              Navigation
+            </div>
+            <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+              <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+          </div>
+
+          <div class="nano">
+            <div class="nano-content">
+              <nav id="menu" class="nav-main" role="navigation">
+                <ul class="nav nav-main">
+                  <li class="nav-active">
+                    <a href="{% url 'admin_home' %}">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+
+   <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-building" aria-hidden="true"></i>
+                      <span>Police Station</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'add_policestation' %}">
+                           Add Police Station
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'manage_policestation' %}">
+                          Manage Police Station
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+
+
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-users" aria-hidden="true"></i>
+                      <span>Police</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'add_police' %}">
+                           Add Police
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'manage_police' %}">
+                          Manage Police
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-tasks" aria-hidden="true"></i>
+                      <span>Crime Category</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'add_category' %}">
+                           Add Category
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'manage_category' %}">
+                           Manage Category
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+
+                  <li class="nav-active">
+                    <a href="{% url 'view_firadmin' %}">
+                      <i class="fa fa-list-alt" aria-hidden="true"></i>
+                      <span>View FIR</span>
+                    </a>
+                  </li>
+
+
+
+                </ul>
+              </nav>
+
+            </div>
+
+          </div>
+
+        </aside>

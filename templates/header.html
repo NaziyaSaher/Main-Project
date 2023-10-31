@@ -1,0 +1,31 @@
+{% load static %}
+<div class="header-top">
+    <div class="container">
+        <div class="logo">
+            <a href="index.php"><img src="{% static 'images/images.jpg' %}" width="40%" align="left" alt=""></a>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <a href="index.php"><img src="{% static 'images/logo.jpg' %}" alt="" style="position:absolute; top:90%;"></a>
+        </div>
+        <div class="top-nav">
+                <span class="menu"><img src="{% static 'images/menu.png' %}" alt="">  </span>
+                    <ul >
+                        <li ><a href="{% url 'index' %}" > Home </a></li>
+                        <li><a href="{% url 'user_login' %}" > Forensic</a></li>
+                        <li><a href="{% url 'police_login' %}" >Police</a></li>
+                        <li><a href="{% url 'admin_login' %}" >Admin</a></li>
+                    <div class="clearfix"> </div>
+                    </ul>
+                    <script>
+                        $("span.menu").click(function(){
+                            $(".top-nav ul").slideToggle(500, function(){
+                            });
+                        });
+                    </script>
+                </div>
+<div class="clearfix"></div>
+    </div>
+</div>

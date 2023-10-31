@@ -1,0 +1,138 @@
+{% load static %}
+{% block body %}
+<html class="fixed">
+	<head>
+
+
+		<title>Crime Record Mgmt System | User-Dashboard</title>
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/magnific-popup/magnific-popup.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap-datepicker/css/datepicker3.css' %}" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/morris/morris.css' %}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme.css' %}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/skins/default.css' %}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme-custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'user/assets/vendor/modernizr/modernizr.js' %}"></script>
+
+	</head>
+	<body>
+		<section class="body">
+
+		 {% include 'headeruser.html' %}
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			 {% include 'sidebaruser.html' %}
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>Dashboard</h2>
+
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="{% url 'user_home' %}">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span>Dashboard</span></li>
+							</ol>
+
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+
+
+
+					<!-- start: page -->
+					<div class="row">
+
+						<div class="col-md-6 col-lg-12 col-xl-6">
+							<div class="row">
+								<div class="col-md-12 col-lg-12 col-xl-12">
+									<section class="panel panel-featured-left panel-featured-primary">
+										<div class="panel-body">
+											<div class="widget-summary">
+
+												<div class="widget-summary-col">
+
+													<span style="color: blue;font-size: 20px;text-align: center;">Welcome to Forensic Management using Blockchain!!!</span><span style = "color : red ; font-size: 20px;text-align: center;">  {{request.user.first_name}}</span>
+
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- end: page -->
+				</section>
+			</div>
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="{% static 'user/assets/vendor/jquery/jquery.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/nanoscroller/nanoscroller.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/magnific-popup/magnific-popup.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-placeholder/jquery.placeholder.js' %}"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="{% static 'user/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-appear/jquery.appear.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-easypiechart/jquery.easypiechart.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/flot/jquery.flot.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/flot-tooltip/jquery.flot.tooltip.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/flot/jquery.flot.pie.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/flot/jquery.flot.categories.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/flot/jquery.flot.resize.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/jquery-sparkline/jquery.sparkline.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/raphael/raphael.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/morris/morris.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/gauge/gauge.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/snap-svg/snap.svg.js' %}"></script>
+		<script src="{% static 'user/assets/vendor/liquid-meter/liquid.meter.js' %}"></script>
+
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'user/assets/javascripts/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'user/assets/javascripts/theme.custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'user/assets/javascripts/theme.init.js' %}"></script>
+
+
+		<!-- Examples -->
+		<script src="{% static 'user/assets/javascripts/dashboard/examples.dashboard.js' %}"></script>
+	</body>
+</html>
+{% endblock %}

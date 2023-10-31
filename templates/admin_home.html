@@ -1,0 +1,226 @@
+{% load static %}
+{% block body %}
+<html class="fixed">
+	<head>
+
+
+		<title>An Implementation of blockchain technology on forensic evidence Management System | Admin-Dashboard</title>
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/magnific-popup/magnific-popup.css' %}" />
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/bootstrap-datepicker/css/datepicker3.css' %}" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css' %}" />
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css' %}" />
+		<link rel="stylesheet" href="{% static 'admin/assets/vendor/morris/morris.css' %}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'admin/assets/stylesheets/theme.css' %}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'admin/assets/stylesheets/skins/default.css' %}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'admin/assets/stylesheets/theme-custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'admin/assets/vendor/modernizr/modernizr.js' %}"></script>
+
+	</head>
+	<body>
+		<section class="body">
+
+		 {% include 'adminheader.html' %}
+
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			 {% include 'adminsidebar.html' %}
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>Dashboard</h2>
+
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="dashboard.php">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span>Dashboard</span></li>
+							</ol>
+
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+
+
+
+					<!-- start: page -->
+					<div class="row">
+
+						<div class="col-md-6 col-lg-12 col-xl-6">
+							<div class="row">
+								<div class="col-md-12 col-lg-6 col-xl-6">
+									<section class="panel panel-featured-left panel-featured-primary">
+										<div class="panel-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-primary">
+														<i class="fa fa-users"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Total Criminals</h4>
+
+														<div class="info">
+															<strong class="amount">{{ccount}}</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a href="{% url 'view_criminaladmin' %}">(view all)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="col-md-12 col-lg-6 col-xl-6">
+									<section class="panel panel-featured-left panel-featured-secondary">
+										<div class="panel-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-secondary">
+														<i class="fa fa-user"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Total Police</h4>
+
+
+														<div class="info">
+															<strong class="amount">{{pcount}}</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a href="{% url 'manage_police' %}">(View All)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="col-md-12 col-lg-6 col-xl-6">
+									<section class="panel panel-featured-left panel-featured-tertiary">
+										<div class="panel-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-tertiary">
+														<i class="fa fa-file"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Total Category</h4>
+
+														<div class="info">
+															<strong class="amount">{{catcount}}</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a href="{% url 'manage_category' %}">(View All)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+
+
+								<div class="col-md-12 col-lg-6 col-xl-6">
+									<section class="panel panel-featured-left panel-featured-quartenary">
+										<div class="panel-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-quartenary">
+														<i class="fa fa-building"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Total Police Stations</h4>
+														<div class="info">
+															<strong class="amount">{{pscount}}</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a href="{% url 'manage_policestation' %}">(view all)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- end: page -->
+				</section>
+			</div>
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="{% static 'admin/assets/vendor/jquery/jquery.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/nanoscroller/nanoscroller.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/magnific-popup/magnific-popup.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-placeholder/jquery.placeholder.js' %}"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="{% static 'admin/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-appear/jquery.appear.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-easypiechart/jquery.easypiechart.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/flot/jquery.flot.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/flot-tooltip/jquery.flot.tooltip.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/flot/jquery.flot.pie.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/flot/jquery.flot.categories.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/flot/jquery.flot.resize.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/jquery-sparkline/jquery.sparkline.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/raphael/raphael.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/morris/morris.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/gauge/gauge.js' %}"></script>
+		<script src="{% static 'admin//vendor/snap-svg/snap.svg.js' %}"></script>
+		<script src="{% static 'admin/assets/vendor/liquid-meter/liquid.meter.js' %}"></script>
+
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'admin/assets/javascripts/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'admin/assets/javascripts/theme.custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'admin/assets/javascripts/theme.init.js' %}"></script>
+
+
+		<!-- Examples -->
+		<script src="{% static 'admin/assets/javascripts/dashboard/examples.dashboard.js' %}"></script>
+	</body>
+</html>
+{% endblock %}

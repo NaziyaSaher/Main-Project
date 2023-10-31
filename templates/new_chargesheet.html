@@ -1,0 +1,145 @@
+{% load static %}
+{% block body %}
+<html class="fixed">
+	<head>
+
+		<title>An Implementation of blockchain technology on forensic evidence Management System | Approved FIR for Chargesheet</title>
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/magnific-popup/magnific-popup.css' %}" />
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/bootstrap-datepicker/css/datepicker3.css' %}" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/select2/select2.css' %}"/>
+		<link rel="stylesheet" href="{% static 'police/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css' %}"/>
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'police/assets/stylesheets/theme.css' %}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'police/assets/stylesheets/skins/default.css' %}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'police/assets/stylesheets/theme-custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'police/assets/vendor/modernizr/modernizr.js' %}"></script>
+
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+			{% include 'headerpolice.html' %}
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				{% include 'sidebarpolice.html' %}
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>Approved FIR for Chargesheet</h2>
+
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="{% url 'police_home' %}">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span>Approved FIR for </span></li>
+								<li><span>Chargesheet</span></li>
+							</ol>
+
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+
+					<!-- start: page -->
+						<section class="panel">
+							<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+
+								<h2 class="panel-title">Approved FIR for Chargesheet</h2>
+							</header>
+							<div class="panel-body">
+
+								 <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                                <thead style="color: red;font-size: 16px">
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Fir No.</th>
+                                        <th class="d-none d-sm-table-cell">Name(s)</th>
+                                        <th class="d-none d-sm-table-cell">Mobile Number</th>
+                                        <th class="d-none d-sm-table-cell">Email</th>
+                                        <th class="d-none d-sm-table-cell">FIR Date</th>
+                                        <th class="d-none d-sm-table-cell">Status</th>
+                                        <th class="d-none d-sm-table-cell" style="width: 15%;">Action</th>
+                                       </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in fir %}
+                                    <tr style="font-size: 15px">
+                                         <td class="text-center">{{forloop.counter}}</td>
+                                        <td class="font-w600">{{i.firno}}</td>
+                                        <td class="font-w600">{{i.userid.first_name}}</td>
+                                        <td class="font-w600">{{i.userid.last_name}}</td>
+                                        <td class="font-w600">{{i.userid.username}}</td>
+                                        <td class="font-w600">
+                                            <span class="badge badge-primary">{{i.dateoffir}}</span>
+                                        </td>
+                                        {% if i.status == None %}
+
+                     <td class="font-w600">Not Updated Yet</td>
+                                        {% else %}
+                                         <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-primary">{{i.status}}</span>
+                                        </td>
+                                                                                   {% endif %}
+                                         <td class="d-none d-sm-table-cell"><a href="{% url 'fill_chargesheetdetails' i.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                                    </tr>
+                                     {% endfor %}
+
+                                </tbody>
+                            </table>
+							</div>
+						</section>
+					<!-- end: page -->
+				</section>
+			</div>
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="{% static 'police/assets/vendor/jquery/jquery.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/nanoscroller/nanoscroller.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/magnific-popup/magnific-popup.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/jquery-placeholder/jquery.placeholder.js' %}"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="{% static 'police/assets/javascripts/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'police/assets/javascripts/theme.custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'police/assets/javascripts/theme.init.js' %}"></script>
+
+		<!-- Examples -->
+		<script src="{% static 'police/assets/javascripts/tables/examples.datatables.editable.js' %}"></script>
+	</body>
+</html>
+{% endblock %}

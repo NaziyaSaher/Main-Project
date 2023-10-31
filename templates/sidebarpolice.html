@@ -1,0 +1,113 @@
+  <aside id="sidebar-left" class="sidebar-left">
+
+          <div class="sidebar-header">
+            <div class="sidebar-title">
+              Navigation
+            </div>
+            <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+              <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+          </div>
+
+          <div class="nano">
+            <div class="nano-content">
+              <nav id="menu" class="nav-main" role="navigation">
+                <ul class="nav nav-main">
+                  <li class="nav-active">
+                    <a href="{% url 'police_home' %}">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+
+
+
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-table" aria-hidden="true"></i>
+                      <span>Forensic Info</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'new_fir' %}">
+                          New Info
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'approved_fir' %}">
+                           Accepted Forensic Query
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'cancelled_fir' %}">
+                           Cancelled/Rejected uery
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'all_fir' %}">
+                           All Query
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-align-left" aria-hidden="true"></i>
+                      <span>Charge Sheet</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'new_chargesheet' %}">
+                           New Chargcheet
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'completed_chargesheet' %}">
+                           Completed Chargesheet
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-columns" aria-hidden="true"></i>
+                      <span>Reports</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="{% url 'betweendates_criminalreport' %}">
+                           B/W dates report of Criminals
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'betweendates_firreport' %}">
+                           B/W dates report of FIR
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                 <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span>Search</span>
+                    </a>
+                    <ul class="nav nav-children">
+
+                      <li>
+                        <a href="{% url 'search_fir' %}">
+                          Search FIR/Charge Sheet
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </nav>
+
+
+            </div>
+
+          </div>
+
+        </aside>

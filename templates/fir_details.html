@@ -1,0 +1,245 @@
+{% load static %}
+{% block body %}
+<html class="fixed">
+	<head>
+		<title>An Implementation of blockchain technology on forensic evidence Management System | View FIR Details</title>
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/magnific-popup/magnific-popup.css' %}" />
+		<link rel="stylesheet" href="{% static 'user/assets/vendor/bootstrap-datepicker/css/datepicker3.css' %}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme.css' %}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/skins/default.css' %}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'user/assets/stylesheets/theme-custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'user/assets/vendor/modernizr/modernizr.js' %}"></script>
+
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+		{% include 'headerpolice.html' %}
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				{% include 'sidebarpolice.html' %}
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>FIR Form</h2>
+
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="{% url 'police_home' %}">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span>View</span></li>
+								<li><span>FIR Details</span></li>
+							</ol>
+
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+
+					<!-- start: page -->
+
+					<div class="row">
+						<div class="col-md-12">
+
+                            <table border="1" class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                            	<tr>
+<td colspan="6" style="font-size:20px;color:red;text-align: center;">
+ FIR Number: {{fir.firno}}</td></tr>
+ <tr>
+<td colspan="6" style="font-size:18px;color:blue">
+ Complainer Details</td></tr>
+                                            <tr>
+    <th>Name</th>
+     <td>{{fir.userid.first_name}}</td>
+     <th>Mobile Number</th>
+    <td>{{fir.userid.last_name}}</td>
+    <th>Email</th>
+    <td>{{fir.userid.username}}</td>
+  </tr>
+  <tr>
+    <tr>
+<td colspan="6" style="font-size:18px;color:blue">
+ FIR Details</td></tr>
+    <th>Police Station</th>
+   <td>{{fir.policestationid.policestationname}}</td>
+    <th>Crime Type</th>
+    <td>{{fir.crimetype.catname}}</td>
+    <th>Name of Accused</th>
+    <td>{{fir.nameaccused}}</td>
+  </tr>
+   <tr>
+
+    <th>Name of Applicants</th>
+    <td>{{fir.nameapplicants}}</td>
+    <th>Parentage of Applicant</th>
+    <td>{{fir.parentageapplicant}}</td>
+     <th>Contact Number</th>
+    <td>{{fir.contactno}}</td>
+  </tr>
+  <tr>
+
+     <th>Address</th>
+    <td colspan="2">{{fir.address}}</td>
+    <th>Purpose of FIR</th>
+    <td colspan="2">{{fir.purposeoffir}}</td>
+  </tr>
+  <tr>
+    <th>Relation with Accused</th>
+     <td>{{fir.relationaccused}}</td>
+    <th>Purpose of FIR</th>
+    <td>{{fir.purposeoffir}}</td>
+    <th>Date of FIR</th>
+    <td>{{fir.dateoffir}}</td>
+  </tr>
+  <tr>
+     <th>Order Final Status</th>
+    <td>
+
+{% if fir.status == "Approved" %}
+  Your FIR has been approved
+{% endif %}
+
+{% if fir.status == "Cancelled" %}
+ Your FIR has been cancelled
+{% endif %}
+
+
+{% if fir.status == None %}
+  Not Response Yet
+{% endif %}
+
+
+     </td>
+     <th >Police Remark</th>
+     {% if fir.status == None %}
+
+                     <td>Not Updated Yet</td>
+{% else %}
+      <td>{{fir.status}}
+                  </td>
+                 {% endif %}
+                  <th >Police Remark Date</th>
+    {% if fir.status == None %}
+
+                     <td>Not Updated Yet</td>
+{% else %}
+     <td>{{fir.remarkdate}}
+                  </td>
+                  {% endif %}
+  </tr>
+
+
+
+
+</table>
+{% if fir.status == None %}
+
+<p align="center"  style="padding-top: 20px">
+ <button class="btn btn-primary waves-effect waves-light w-lg" data-toggle="modal" data-target="#myModal">Take Action</button></p>
+
+{% endif %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Take Action</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <table class="table table-bordered table-hover data-tables">
+
+        <form method="post" name="submit">
+                                {% csrf_token %}
+
+     <tr>
+    <th>Remark :</th>
+    <td>
+    <textarea name="remark" placeholder="Remark" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+  </tr>
+
+  <tr>
+    <th>Status :</th>
+    <td>
+
+   <select name="status" class="form-control wd-450" required="true" >
+     <option value="Approved" selected="true">Approved</option>
+     <option value="Cancelled">Cancelled</option>
+   </select></td>
+  </tr>
+</table>
+</div>
+<div class="modal-footer">
+ <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ <button type="submit" name="submit" class="btn btn-primary">Update</button>
+
+  </form>
+						</div>
+
+					</div>
+					<!-- end: page -->
+				</section>
+			</div>
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="{% static 'police/assets/vendor/jquery/jquery.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/nanoscroller/nanoscroller.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/magnific-popup/magnific-popup.js' %}"></script>
+		<script src="{% static 'police/assets/vendor/jquery-placeholder/jquery.placeholder.js' %}"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="{% static 'police/assets/vendor/jquery-validation/jquery.validate.js' %}"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'police/assets/javascripts/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'police/assets/javascripts/theme.custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'police/assets/javascripts/theme.init.js' %}"></script>
+
+		<!-- Examples -->
+		<script src="{% static 'police/assets/javascripts/forms/examples.validation.js' %}"></script>
+	</body>
+</html>
+
+{% ifequal error "no" %}
+<script>
+    alert('Remark has been updated');
+    window.location=('{% url 'fir_details' fir.id %}');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endifequal %}
+{% endblock %}

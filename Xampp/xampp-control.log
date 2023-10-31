@@ -1,0 +1,80 @@
+18:40:15  [main] 	Initializing Control Panel
+18:40:15  [main] 	Windows Version:  Home  64-bit
+18:40:15  [main] 	XAMPP Version: ???
+18:40:15  [main] 	Control Panel Version: 3.2.2  [ Compiled: Nov 12th 2015 ]
+18:40:15  [main] 	You are not running with administrator rights! This will work for
+18:40:15  [main] 	most application stuff but whenever you do something with services
+18:40:15  [main] 	there will be a security dialogue or things will break! So think 
+18:40:15  [main] 	about running this application with administrator rights!
+18:40:15  [main] 	XAMPP Installation Directory: "c:\users\91805\downloads\college\xampp\"
+18:40:15  [main] 	Checking for prerequisites
+18:40:15  [main] 	All prerequisites found
+18:40:15  [main] 	Initializing Modules
+18:40:15  [Apache] 	Problem detected: Apache Not Found!
+18:40:15  [Apache] 	Disabling Apache buttons
+18:40:15  [Apache] 	Run this program from your XAMPP root directory!
+18:40:15  [mysql] 	Problem detected: MySQL Not Found!
+18:40:15  [mysql] 	Disabling MySQL buttons
+18:40:15  [mysql] 	Run this program from your XAMPP root directory!
+18:40:15  [filezilla] 	Problem detected: FileZilla Not Found!
+18:40:15  [filezilla] 	Disabling FileZilla buttons
+18:40:15  [filezilla] 	Run this program from your XAMPP root directory!
+18:40:15  [mercury] 	Problem detected: Mercury Not Found!
+18:40:15  [mercury] 	Disabling Mercury buttons
+18:40:15  [mercury] 	Run this program from your XAMPP root directory!
+18:40:15  [Tomcat] 	Problem detected: Tomcat Not Found!
+18:40:15  [Tomcat] 	Disabling Tomcat buttons
+18:40:15  [Tomcat] 	Run this program from your XAMPP root directory!
+18:40:15  [Tomcat] 	Problem detected: Required Tool catalina_start.bat Not Found!
+18:40:15  [Tomcat] 	Problem detected: Required Tool catalina_stop.bat Not Found!
+18:40:15  [Tomcat] 	Problem detected: Required Tool catalina_service.bat Not Found!
+18:40:15  [main] 	Starting Check-Timer
+18:40:15  [main] 	Control Panel Ready
+18:40:56  [main] 	Deinitializing Modules
+18:40:56  [main] 	Deinitializing Control Panel
+
+11:44:07  [main] 	Initializing Control Panel
+11:44:07  [main] 	Windows Version:  Home  64-bit
+11:44:07  [main] 	XAMPP Version: ???
+11:44:07  [main] 	Control Panel Version: 3.2.2  [ Compiled: Nov 12th 2015 ]
+11:44:07  [main] 	You are not running with administrator rights! This will work for
+11:44:07  [main] 	most application stuff but whenever you do something with services
+11:44:07  [main] 	there will be a security dialogue or things will break! So think 
+11:44:07  [main] 	about running this application with administrator rights!
+11:44:07  [main] 	XAMPP Installation Directory: "c:\users\91805\onedrive\desktop\college\college\xampp\"
+11:44:07  [main] 	Checking for prerequisites
+11:44:10  [main] 	All prerequisites found
+11:44:10  [main] 	Initializing Modules
+11:44:10  [Apache] 	Problem detected: Apache Not Found!
+11:44:10  [Apache] 	Disabling Apache buttons
+11:44:10  [Apache] 	Run this program from your XAMPP root directory!
+11:44:10  [mysql] 	Problem detected: MySQL Not Found!
+11:44:10  [mysql] 	Disabling MySQL buttons
+11:44:10  [mysql] 	Run this program from your XAMPP root directory!
+11:44:10  [mysql] 	MySQL Service detected with wrong path
+11:44:10  [mysql] 	Change XAMPP MySQL and Control Panel settings or
+11:44:10  [mysql] 	Uninstall/disable the other service manually first
+11:44:10  [mysql] 	Found Path: "C:\Program Files (x86)\MySQL\MySQL Server 5.0\bin\mysqld-nt" --defaults-file="C:\Program Files (x86)\MySQL\MySQL Server 5.0\my.ini" MySQL
+11:44:10  [mysql] 	Expected Path: c:\users\91805\onedrive\desktop\college\college\xampp\mysql\bin\mysqld.exe --defaults-file=c:\users\91805\onedrive\desktop\college\college\xampp\mysql\bin\my.ini mysql
+11:44:10  [mysql] 	Problem detected!
+11:44:10  [mysql] 	Port 3306 in use by ""C:\Program Files (x86)\MySQL\MySQL Server 5.0\bin\mysqld-nt" --defaults-file="C:\Program Files (x86)\MySQL\MySQL Server 5.0\my.ini" MySQL"!
+11:44:10  [mysql] 	MySQL WILL NOT start without the configured ports free!
+11:44:10  [mysql] 	You need to uninstall/disable/reconfigure the blocking application
+11:44:10  [mysql] 	or reconfigure MySQL and the Control Panel to listen on a different port
+11:44:10  [filezilla] 	Problem detected: FileZilla Not Found!
+11:44:10  [filezilla] 	Disabling FileZilla buttons
+11:44:10  [filezilla] 	Run this program from your XAMPP root directory!
+11:44:10  [mercury] 	Problem detected: Mercury Not Found!
+11:44:10  [mercury] 	Disabling Mercury buttons
+11:44:10  [mercury] 	Run this program from your XAMPP root directory!
+11:44:10  [Tomcat] 	Problem detected: Tomcat Not Found!
+11:44:10  [Tomcat] 	Disabling Tomcat buttons
+11:44:10  [Tomcat] 	Run this program from your XAMPP root directory!
+11:44:10  [Tomcat] 	Problem detected: Required Tool catalina_start.bat Not Found!
+11:44:10  [Tomcat] 	Problem detected: Required Tool catalina_stop.bat Not Found!
+11:44:10  [Tomcat] 	Problem detected: Required Tool catalina_service.bat Not Found!
+11:44:10  [main] 	Starting Check-Timer
+11:44:10  [main] 	Control Panel Ready
+11:53:54  [main] 	Deinitializing Modules
+11:53:54  [main] 	Deinitializing Control Panel
+
